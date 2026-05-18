@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { ArrowRight, Sparkles, Shield, Award } from "lucide-react";
+import anubisLogo from "@/assets/anubis-logo.jpg";
+import anubisAvatar from "@/assets/anubis-avatar.jpg";
+import anubisGracias from "@/assets/anubis-gracias.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
