@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
-import { ShieldCheck, Sparkles, Heart, Coffee } from "lucide-react";
+import { ShieldCheck, Sparkles, Heart, Coffee, MapPin, Clock, AlertCircle } from "lucide-react";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
       { title: "Sobre Nosotros · AnubisTattoo" },
-      { name: "description", content: "Conocé el estudio AnubisTattoo: filosofía, higiene y experiencia premium." },
+      { name: "description", content: "Conocé el estudio AnubisTattoo: Nicolás Andrada, tatuador desde 2012 en Río Cuarto." },
     ],
   }),
   component: Sobre,
@@ -27,6 +27,39 @@ function Sobre() {
           </p>
         </div>
 
+        {/* TATUADOR */}
+        <div className="mt-16 glass rounded-2xl p-10 text-center">
+          <p className="text-xs uppercase tracking-[0.4em] text-primary">Tatuador</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-display tracking-widest text-gradient-gold">
+            NICOLÁS ANDRADA
+          </h2>
+          <div className="mt-4 gold-divider w-16 mx-auto" />
+          <p className="mt-6 text-base md:text-lg text-muted-foreground">
+            Tatuando desde el año <span className="text-primary font-semibold">2012</span>.
+            Más de una década perfeccionando el arte sobre piel.
+          </p>
+        </div>
+
+        {/* INFO PRACTICA */}
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="glass rounded-2xl p-8">
+            <MapPin className="h-8 w-8 text-primary" />
+            <h3 className="mt-5 text-xl">Dirección</h3>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              Galería Río Cuarto · Local 13<br />
+              Vélez Sarsfield 143, Río Cuarto, Córdoba.
+            </p>
+          </div>
+          <div className="glass rounded-2xl p-8">
+            <Clock className="h-8 w-8 text-primary" />
+            <h3 className="mt-5 text-xl">Horarios</h3>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              Lunes a Sábados<br />
+              09:00 – 13:00 hs · 16:30 – 20:00 hs
+            </p>
+          </div>
+        </div>
+
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {[
             {
@@ -42,7 +75,7 @@ function Sobre() {
             {
               icon: Heart,
               title: "Experiencia y técnica",
-              text: "Años de oficio en blackwork, realismo, minimalismo, arte egipcio y tradicional japonés.",
+              text: "Más de 10 años de oficio en blackwork, realismo, minimalismo, arte egipcio y tradicional japonés.",
             },
             {
               icon: Coffee,
@@ -56,6 +89,19 @@ function Sobre() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{b.text}</p>
             </div>
           ))}
+        </div>
+
+        {/* EDAD */}
+        <div className="mt-10 glass rounded-2xl p-8 border border-primary/30 flex items-start gap-4">
+          <AlertCircle className="h-8 w-8 text-primary shrink-0" />
+          <div>
+            <h3 className="text-xl">Edad mínima · +18</h3>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              Para realizarte un tatuaje debés ser <span className="text-primary font-semibold">mayor de 18 años</span>.
+              Los menores de edad solo podrán tatuarse <span className="text-primary font-semibold">acompañados por su padre, madre o tutor legal</span>,
+              presentando DNI de ambos.
+            </p>
+          </div>
         </div>
       </section>
     </Layout>
