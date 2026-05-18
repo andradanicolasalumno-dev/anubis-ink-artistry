@@ -1,20 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Play } from "lucide-react";
+import { useState } from "react";
+import blackwork1 from "@/assets/gallery/blackwork-1.jpg";
+import realismo1 from "@/assets/gallery/realismo-1.jpg";
+import animales1 from "@/assets/gallery/animales-1.jpg";
+import flores1 from "@/assets/gallery/flores-1.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
       { title: "Galería · AnubisTattoo" },
-      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, egipcio y japonés." },
+      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, animales y flores." },
     ],
   }),
   component: Galeria,
 });
 
-const styles = ["Todos", "Blackwork", "Realismo", "Minimalista", "Egipcio", "Japonés"];
+const categories = ["Todos", "Blackwork", "Realismo", "Minimalista", "Animales", "Flores"] as const;
+type Category = typeof categories[number];
+
+type Piece = { src: string; category: Exclude<Category, "Todos">; title: string };
+
+const pieces: Piece[] = [
+  { src: blackwork1, category: "Blackwork", title: "Rosas & dinero" },
+  { src: realismo1, category: "Realismo", title: "Leona & retrato" },
+  { src: animales1, category: "Animales", title: "Leona y cachorros" },
+  { src: flores1, category: "Flores", title: "Lilium & rosa" },
+];
 
 function Galeria() {
+  const [active, setActive] = useState<Category>("Todos");
+  const filtered = active === "Todos" ? pieces : pieces.filter((p) => p.category === active);
+
   return (
     <Layout>
       <section className="mx-auto max-w-7xl px-6 py-20">
@@ -29,11 +47,12 @@ function Galeria() {
 
         {/* Filter chips */}
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {styles.map((s, i) => (
+          {categories.map((s) => (
             <button
               key={s}
+              onClick={() => setActive(s)}
               className={`rounded-full px-5 py-2 text-xs uppercase tracking-widest border transition-colors ${
-                i === 0
+                active === s
                   ? "bg-gradient-gold text-primary-foreground border-transparent"
                   : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
               }`}
@@ -43,27 +62,23 @@ function Galeria() {
           ))}
         </div>
 
-        {/* Grid placeholders */}
+        {/* Grid */}
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 9 }).map((_, i) => (
+          {filtered.map((p, i) => (
             <div
               key={i}
               className="group relative aspect-[4/5] overflow-hidden rounded-2xl glass"
             >
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.18 0.01 60), oklch(0.12 0.005 60))",
-                }}
+              <img
+                src={p.src}
+                alt={p.title}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-5 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all">
-                <p className="text-xs uppercase tracking-widest text-primary">{styles[(i % 5) + 1]}</p>
-                <p className="text-sm text-foreground/90 mt-1">Tatuaje #{i + 1}</p>
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/40 text-xs uppercase tracking-widest">
-                Foto próximamente
+                <p className="text-xs uppercase tracking-widest text-primary">{p.category}</p>
+                <p className="text-sm text-foreground/90 mt-1">{p.title}</p>
               </div>
             </div>
           ))}
