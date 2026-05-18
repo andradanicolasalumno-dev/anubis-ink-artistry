@@ -8,6 +8,7 @@ import animales1 from "@/assets/gallery/animales-1.jpg";
 import flores1 from "@/assets/gallery/flores-1.jpg";
 import lettering1 from "@/assets/gallery/lettering-1.jpg";
 import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
+import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
