@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Instagram } from "lucide-react";
+import anubisIcon from "@/assets/anubis-icon.jpg";
 
 const links = [
   { to: "/", label: "Inicio" },
@@ -15,13 +16,20 @@ export function SiteHeader() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 glass">
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="text-xl md:text-2xl font-display tracking-[0.25em] text-gradient-gold">
-            ANUBIS
-          </span>
-          <span className="text-xl md:text-2xl font-display tracking-[0.25em] text-foreground/90">
-            TATTOO
-          </span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src={anubisIcon}
+            alt="AnubisTattoo"
+            className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover ring-1 ring-primary/40 group-hover:ring-primary transition"
+          />
+          <div className="flex items-center gap-2">
+            <span className="text-xl md:text-2xl font-display tracking-[0.25em] text-gradient-gold">
+              ANUBIS
+            </span>
+            <span className="text-xl md:text-2xl font-display tracking-[0.25em] text-foreground/90">
+              TATTOO
+            </span>
+          </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
