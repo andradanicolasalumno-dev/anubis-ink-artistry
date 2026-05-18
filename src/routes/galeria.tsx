@@ -82,7 +82,7 @@ function Galeria() {
               />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-5 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all">
-                <p className="text-xs uppercase tracking-widest text-primary">{p.category}</p>
+                <p className="text-xs uppercase tracking-widest text-primary">{p.categories.join(" · ")}</p>
                 <p className="text-sm text-foreground/90 mt-1">{p.title}</p>
               </div>
             </div>
