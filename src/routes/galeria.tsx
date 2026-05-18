@@ -7,33 +7,36 @@ import realismo1 from "@/assets/gallery/realismo-1.jpg";
 import animales1 from "@/assets/gallery/animales-1.jpg";
 import flores1 from "@/assets/gallery/flores-1.jpg";
 import lettering1 from "@/assets/gallery/lettering-1.jpg";
+import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
       { title: "Galería · AnubisTattoo" },
-      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, animales, flores y lettering." },
+      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, animales, flores, lettering y mandalas." },
     ],
   }),
   component: Galeria,
 });
 
-const categories = ["Todos", "Blackwork", "Realismo", "Minimalista", "Animales", "Flores", "Lettering"] as const;
+const categories = ["Todos", "Blackwork", "Realismo", "Minimalista", "Animales", "Flores", "Lettering", "Mandalas"] as const;
 type Category = typeof categories[number];
+type PieceCategory = Exclude<Category, "Todos">;
 
-type Piece = { src: string; category: Exclude<Category, "Todos">; title: string };
+type Piece = { src: string; categories: PieceCategory[]; title: string };
 
 const pieces: Piece[] = [
-  { src: blackwork1, category: "Blackwork", title: "Rosas & dinero" },
-  { src: realismo1, category: "Realismo", title: "Leona & retrato" },
-  { src: animales1, category: "Animales", title: "Leona y cachorros" },
-  { src: flores1, category: "Flores", title: "Lilium & rosa" },
-  { src: lettering1, category: "Lettering", title: "Padre · Ángel · Madre · Vida" },
+  { src: blackwork1, categories: ["Blackwork"], title: "Rosas & dinero" },
+  { src: realismo1, categories: ["Realismo"], title: "Leona & retrato" },
+  { src: animales1, categories: ["Animales"], title: "Leona y cachorros" },
+  { src: flores1, categories: ["Flores"], title: "Lilium & rosa" },
+  { src: lettering1, categories: ["Lettering"], title: "Padre · Ángel · Madre · Vida" },
+  { src: mandalas1, categories: ["Mandalas", "Flores"], title: "Mandala & flores" },
 ];
 
 function Galeria() {
   const [active, setActive] = useState<Category>("Todos");
-  const filtered = active === "Todos" ? pieces : pieces.filter((p) => p.category === active);
+  const filtered = active === "Todos" ? pieces : pieces.filter((p) => p.categories.includes(active));
 
   return (
     <Layout>
