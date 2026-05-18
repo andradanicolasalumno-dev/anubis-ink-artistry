@@ -120,6 +120,35 @@ function Home() {
           </Link>
         </div>
       </section>
+
+      {/* GRACIAS */}
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid lg:grid-cols-2 gap-12 items-center glass rounded-3xl p-8 md:p-12 overflow-hidden">
+          <div className="flex justify-center">
+            <img
+              src={anubisGracias}
+              alt="Gracias por elegirnos"
+              className="w-full max-w-md h-auto drop-shadow-[0_20px_50px_rgba(212,168,76,0.25)]"
+            />
+          </div>
+          <div className="text-center lg:text-left">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">Comunidad</p>
+            <h2 className="mt-3 text-3xl md:text-5xl text-gradient-gold">¡Gracias por elegirnos!</h2>
+            <div className="mt-6 gold-divider w-24 mx-auto lg:mx-0" />
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Cada cliente que confía en nosotros forma parte de la historia de AnubisTattoo.
+              Gracias por dejarnos ser parte de tu piel y de tu historia.
+            </p>
+            <Link
+              to="/reservar"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-gold hover:scale-105 transition-transform"
+            >
+              Reservá tu turno
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
