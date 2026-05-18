@@ -33,6 +33,7 @@ const pieces: Piece[] = [
   { src: flores1, categories: ["Flores"], title: "Lilium & rosa" },
   { src: lettering1, categories: ["Lettering"], title: "Padre · Ángel · Madre · Vida" },
   { src: mandalas1, categories: ["Mandalas", "Flores"], title: "Mandala & flores" },
+  { src: minimalista1, categories: ["Minimalista", "Lettering"], title: "Manitos · Román" },
 ];
 
 function Galeria() {
