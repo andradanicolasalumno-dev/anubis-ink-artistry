@@ -29,35 +29,50 @@ function Home() {
               "radial-gradient(circle at 20% 30%, oklch(0.78 0.14 80 / 0.25), transparent 40%), radial-gradient(circle at 80% 70%, oklch(0.55 0.22 28 / 0.2), transparent 45%)",
           }}
         />
-        <div className="relative mx-auto max-w-7xl px-6 py-32 md:py-44 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-primary animate-fade-up">
-            <Sparkles className="h-3 w-3" /> Estudio Premium · Río Cuarto
+        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-primary animate-fade-up">
+              <Sparkles className="h-3 w-3" /> Estudio Premium · Río Cuarto
+            </div>
+            <div className="mt-8 flex justify-center lg:justify-start animate-fade-up" style={{ animationDelay: "0.05s" }}>
+              <img
+                src={anubisLogo}
+                alt="AnubisTattoo logo"
+                className="w-56 md:w-72 h-auto drop-shadow-[0_0_40px_rgba(212,168,76,0.35)] animate-float-slow"
+              />
+            </div>
+            <div className="mt-8 gold-divider w-40 mx-auto lg:mx-0" />
+            <p className="mt-8 text-xl md:text-2xl font-display tracking-[0.4em] text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              EL ARTE EN TU PIEL
+            </p>
+            <p className="mt-4 max-w-xl mx-auto lg:mx-0 text-base text-muted-foreground animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              Tatuajes hechos a mano con precisión, técnica y arte. Cada diseño cuenta una historia.
+            </p>
+            <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style={{ animationDelay: "0.4s" }}>
+              <Link
+                to="/reservar"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-gold px-8 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-gold hover:scale-105 transition-transform"
+              >
+                Reservá tu sesión
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/galeria"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-primary hover:bg-primary/10 transition-colors"
+              >
+                Ver galería
+              </Link>
+            </div>
           </div>
-          <h1 className="mt-8 text-5xl md:text-8xl font-display tracking-[0.15em] animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <span className="text-gradient-gold">ANUBIS</span>
-            <span className="block text-foreground/95 mt-2">TATTOO</span>
-          </h1>
-          <div className="mt-8 gold-divider w-40 mx-auto" />
-          <p className="mt-8 text-xl md:text-2xl font-display tracking-[0.4em] text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            INK WITH MEANING
-          </p>
-          <p className="mt-4 max-w-xl mx-auto text-base text-muted-foreground animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            Tatuajes hechos a mano con precisión, técnica y arte. Cada diseño cuenta una historia.
-          </p>
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <Link
-              to="/reservar"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-gold px-8 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-gold hover:scale-105 transition-transform"
-            >
-              Reservá tu sesión
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/galeria"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-primary hover:bg-primary/10 transition-colors"
-            >
-              Ver galería
-            </Link>
+          <div className="hidden lg:flex justify-center items-end animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent blur-3xl" />
+              <img
+                src={anubisAvatar}
+                alt="Anubis mascot"
+                className="relative w-[420px] h-auto drop-shadow-[0_30px_60px_rgba(212,168,76,0.25)]"
+              />
+            </div>
           </div>
         </div>
       </section>
