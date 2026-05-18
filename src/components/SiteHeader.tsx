@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Instagram } from "lucide-react";
+import anubisIcon from "@/assets/anubis-icon.jpg";
 
 const links = [
   { to: "/", label: "Inicio" },
