@@ -9,18 +9,19 @@ import flores1 from "@/assets/gallery/flores-1.jpg";
 import lettering1 from "@/assets/gallery/lettering-1.jpg";
 import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
 import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
+import blackandgrey1 from "@/assets/gallery/blackandgrey-1.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
       { title: "Galería · AnubisTattoo" },
-      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, animales, flores, lettering y mandalas." },
+      { name: "description", content: "Galería de tatuajes: blackwork, black and grey, realismo, minimalista, animales, flores, lettering y mandalas." },
     ],
   }),
   component: Galeria,
 });
 
-const categories = ["Todos", "Blackwork", "Realismo", "Minimalista", "Animales", "Flores", "Lettering", "Mandalas"] as const;
+const categories = ["Todos", "Blackwork", "Black and Grey", "Realismo", "Minimalista", "Animales", "Flores", "Lettering", "Mandalas"] as const;
 type Category = typeof categories[number];
 type PieceCategory = Exclude<Category, "Todos">;
 
@@ -34,6 +35,7 @@ const pieces: Piece[] = [
   { src: lettering1, categories: ["Lettering"], title: "Padre · Ángel · Madre · Vida" },
   { src: mandalas1, categories: ["Mandalas", "Flores"], title: "Mandala & flores" },
   { src: minimalista1, categories: ["Minimalista", "Lettering"], title: "Manitos · Román" },
+  { src: blackandgrey1, categories: ["Black and Grey", "Lettering"], title: "Chicano · Blessed by God" },
 ];
 
 function Galeria() {
