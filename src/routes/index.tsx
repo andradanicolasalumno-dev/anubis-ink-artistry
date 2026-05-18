@@ -100,7 +100,7 @@ function Home() {
           <div className="mt-6 gold-divider w-24 mx-auto" />
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {["Blackwork", "Realismo", "Minimalista", "Animales", "Flores", "Lettering"].map((s) => (
+          {["Blackwork", "Realismo", "Minimalista", "Animales", "Flores", "Lettering", "Mandalas"].map((s) => (
             <div
               key={s}
               className="aspect-[3/4] rounded-xl glass flex items-end p-5 group hover:scale-[1.02] transition-transform cursor-pointer"
