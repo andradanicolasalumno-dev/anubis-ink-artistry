@@ -25,23 +25,27 @@ export function SiteFooter() {
                 @anubistattoo.r4
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" />
-              Río Cuarto, Argentina
+            <li className="flex items-start gap-2">
+              <MapPin className="h-4 w-4 text-primary mt-0.5" />
+              <span>
+                Galería Río Cuarto · Local 13<br />
+                Vélez Sarsfield 143, Río Cuarto
+              </span>
             </li>
           </ul>
         </div>
         <div>
           <h4 className="text-sm uppercase tracking-widest text-primary mb-4">Horario</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>Lun – Vie · 11:00 – 20:00</li>
-            <li>Sábados · 11:00 – 18:00</li>
-            <li>Domingos · Solo con cita previa</li>
+            <li>Lunes a Sábados</li>
+            <li>09:00 – 13:00 hs</li>
+            <li>16:30 – 20:00 hs</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-border/40 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} AnubisTattoo · Ink with meaning.
+      <div className="border-t border-border/40 py-6 text-center text-xs text-muted-foreground space-y-1">
+        <p>+18 · Menores deben asistir acompañados por su padre, madre o tutor legal.</p>
+        <p>© {new Date().getFullYear()} AnubisTattoo · Ink with meaning.</p>
       </div>
     </footer>
   );
