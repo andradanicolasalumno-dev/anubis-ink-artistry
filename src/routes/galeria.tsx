@@ -10,6 +10,7 @@ import lettering1 from "@/assets/gallery/lettering-1.jpg";
 import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
 import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
 import blackandgrey1 from "@/assets/gallery/blackandgrey-1.jpg";
+import animales2 from "@/assets/gallery/animales-2.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
@@ -36,6 +37,7 @@ const pieces: Piece[] = [
   { src: mandalas1, categories: ["Mandalas", "Flores"], title: "Mandala & flores" },
   { src: minimalista1, categories: ["Minimalista", "Lettering"], title: "Manitos · Román" },
   { src: blackandgrey1, categories: ["Black and Grey", "Lettering"], title: "Chicano · Blessed by God" },
+  { src: animales2, categories: ["Animales", "Black and Grey"], title: "Ave fénix" },
 ];
 
 function Galeria() {
