@@ -6,18 +6,19 @@ import blackwork1 from "@/assets/gallery/blackwork-1.jpg";
 import realismo1 from "@/assets/gallery/realismo-1.jpg";
 import animales1 from "@/assets/gallery/animales-1.jpg";
 import flores1 from "@/assets/gallery/flores-1.jpg";
+import lettering1 from "@/assets/gallery/lettering-1.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
       { title: "Galería · AnubisTattoo" },
-      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, animales y flores." },
+      { name: "description", content: "Galería de tatuajes: blackwork, realismo, minimalista, animales, flores y lettering." },
     ],
   }),
   component: Galeria,
 });
 
-const categories = ["Todos", "Blackwork", "Realismo", "Minimalista", "Animales", "Flores"] as const;
+const categories = ["Todos", "Blackwork", "Realismo", "Minimalista", "Animales", "Flores", "Lettering"] as const;
 type Category = typeof categories[number];
 
 type Piece = { src: string; category: Exclude<Category, "Todos">; title: string };
@@ -27,6 +28,7 @@ const pieces: Piece[] = [
   { src: realismo1, category: "Realismo", title: "Leona & retrato" },
   { src: animales1, category: "Animales", title: "Leona y cachorros" },
   { src: flores1, category: "Flores", title: "Lilium & rosa" },
+  { src: lettering1, category: "Lettering", title: "Padre · Ángel · Madre · Vida" },
 ];
 
 function Galeria() {
