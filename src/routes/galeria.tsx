@@ -6,6 +6,7 @@ import blackwork1 from "@/assets/gallery/blackwork-1.jpg";
 import realismo1 from "@/assets/gallery/realismo-1.jpg";
 import animales1 from "@/assets/gallery/animales-1.jpg";
 import flores1 from "@/assets/gallery/flores-1.jpg";
+import flores2 from "@/assets/gallery/flores-2.jpg";
 import lettering1 from "@/assets/gallery/lettering-1.jpg";
 import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
 import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
@@ -44,6 +45,7 @@ const pieces: Piece[] = [
   { src: blackandgrey2, categories: ["Black and Grey", "Realismo"], title: "Pulpo & llave" },
   { src: blackandgrey3, categories: ["Black and Grey", "Lettering", "Realismo"], title: "La sonrisa de mamá lo vale todo" },
   { src: minimalista2, categories: ["Minimalista", "Lettering"], title: "Fineline · 11:11 · Bautista" },
+  { src: flores2, categories: ["Flores", "Lettering", "Black and Grey"], title: "Family · Rosas" },
 ];
 
 function Galeria() {
