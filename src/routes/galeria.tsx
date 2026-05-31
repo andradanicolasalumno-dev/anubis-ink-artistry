@@ -45,6 +45,7 @@ const pieces: Piece[] = [
   { src: blackandgrey2, categories: ["Black and Grey", "Realismo"], title: "Pulpo & llave" },
   { src: blackandgrey3, categories: ["Black and Grey", "Lettering", "Realismo"], title: "La sonrisa de mamá lo vale todo" },
   { src: minimalista2, categories: ["Minimalista", "Lettering"], title: "Fineline · 11:11 · Bautista" },
+  { src: flores2, categories: ["Flores", "Lettering", "Black and Grey"], title: "Family · Rosas" },
 ];
 
 function Galeria() {
