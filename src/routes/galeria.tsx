@@ -11,6 +11,7 @@ import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
 import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
 import blackandgrey1 from "@/assets/gallery/blackandgrey-1.jpg";
 import animales2 from "@/assets/gallery/animales-2.jpg";
+import blackandgrey2 from "@/assets/gallery/blackandgrey-2.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
