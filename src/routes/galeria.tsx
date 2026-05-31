@@ -12,6 +12,7 @@ import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
 import blackandgrey1 from "@/assets/gallery/blackandgrey-1.jpg";
 import animales2 from "@/assets/gallery/animales-2.jpg";
 import blackandgrey2 from "@/assets/gallery/blackandgrey-2.jpg";
+import blackandgrey3 from "@/assets/gallery/blackandgrey-3.jpg";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
@@ -40,6 +41,7 @@ const pieces: Piece[] = [
   { src: blackandgrey1, categories: ["Black and Grey", "Lettering"], title: "Chicano · Blessed by God" },
   { src: animales2, categories: ["Animales", "Black and Grey"], title: "Ave fénix" },
   { src: blackandgrey2, categories: ["Black and Grey", "Realismo"], title: "Pulpo & llave" },
+  { src: blackandgrey3, categories: ["Black and Grey", "Lettering", "Realismo"], title: "La sonrisa de mamá lo vale todo" },
 ];
 
 function Galeria() {
