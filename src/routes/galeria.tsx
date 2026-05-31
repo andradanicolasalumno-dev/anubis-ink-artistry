@@ -39,6 +39,7 @@ const pieces: Piece[] = [
   { src: minimalista1, categories: ["Minimalista", "Lettering"], title: "Manitos · Román" },
   { src: blackandgrey1, categories: ["Black and Grey", "Lettering"], title: "Chicano · Blessed by God" },
   { src: animales2, categories: ["Animales", "Black and Grey"], title: "Ave fénix" },
+  { src: blackandgrey2, categories: ["Black and Grey", "Realismo"], title: "Pulpo & llave" },
 ];
 
 function Galeria() {
