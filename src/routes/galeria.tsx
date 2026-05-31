@@ -110,30 +110,49 @@ function Galeria() {
           <div className="mt-6 gold-divider w-24 mx-auto" />
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, i) => (
+          {[
+            { src: "/reels/reel-1.mp4", title: "Reel #1", subtitle: "Proceso en vivo" },
+            { src: null, title: "Reel #2", subtitle: "Próximamente" },
+            { src: null, title: "Reel #3", subtitle: "Próximamente" },
+          ].map((r, i) => (
             <div
               key={i}
-              className="group relative aspect-[9/16] overflow-hidden rounded-2xl glass cursor-pointer"
+              className="group relative aspect-[9/16] overflow-hidden rounded-2xl glass"
             >
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, oklch(0.16 0.01 60), oklch(0.08 0.005 60))",
-                }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="h-16 w-16 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
-                  <Play className="h-7 w-7 text-primary-foreground ml-1" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background to-transparent">
-                <p className="text-sm text-foreground/90">Reel #{i + 1}</p>
-                <p className="text-xs text-muted-foreground">Próximamente</p>
+              {r.src ? (
+                <video
+                  src={r.src}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <>
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, oklch(0.16 0.01 60), oklch(0.08 0.005 60))",
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="h-16 w-16 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
+                      <Play className="h-7 w-7 text-primary-foreground ml-1" />
+                    </div>
+                  </div>
+                </>
+              )}
+              <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background to-transparent pointer-events-none">
+                <p className="text-sm text-foreground/90">{r.title}</p>
+                <p className="text-xs text-muted-foreground">{r.subtitle}</p>
               </div>
             </div>
           ))}
         </div>
+
       </section>
     </Layout>
   );
