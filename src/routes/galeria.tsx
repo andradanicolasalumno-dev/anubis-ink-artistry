@@ -52,7 +52,9 @@ const pieces: Piece[] = [
 ];
 
 function Galeria() {
-  const [active, setActive] = useState<Category>("Todos");
+  const { cat } = Route.useSearch();
+  const initial = (categories as readonly string[]).includes(cat ?? "") ? (cat as Category) : "Todos";
+  const [active, setActive] = useState<Category>(initial);
   const filtered = active === "Todos" ? pieces : pieces.filter((p) => p.categories.includes(active));
 
   return (
