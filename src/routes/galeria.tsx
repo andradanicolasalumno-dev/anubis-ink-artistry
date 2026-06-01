@@ -17,6 +17,9 @@ import blackandgrey2 from "@/assets/gallery/blackandgrey-2.jpg";
 import blackandgrey3 from "@/assets/gallery/blackandgrey-3.jpg";
 
 export const Route = createFileRoute("/galeria")({
+  validateSearch: (search: Record<string, unknown>): { cat?: string } => ({
+    cat: typeof search.cat === "string" ? search.cat : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Galería · AnubisTattoo" },
@@ -49,7 +52,9 @@ const pieces: Piece[] = [
 ];
 
 function Galeria() {
-  const [active, setActive] = useState<Category>("Todos");
+  const { cat } = Route.useSearch();
+  const initial = (categories as readonly string[]).includes(cat ?? "") ? (cat as Category) : "Todos";
+  const [active, setActive] = useState<Category>(initial);
   const filtered = active === "Todos" ? pieces : pieces.filter((p) => p.categories.includes(active));
 
   return (

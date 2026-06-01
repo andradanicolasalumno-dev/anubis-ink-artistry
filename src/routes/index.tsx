@@ -4,6 +4,25 @@ import { ArrowRight, Sparkles, Shield, Award } from "lucide-react";
 import anubisLogo from "@/assets/anubis-logo.jpg";
 import anubisAvatar from "@/assets/anubis-avatar.jpg";
 import anubisGracias from "@/assets/anubis-gracias.jpg";
+import blackwork1 from "@/assets/gallery/blackwork-1.jpg";
+import blackandgrey1 from "@/assets/gallery/blackandgrey-1.jpg";
+import realismo1 from "@/assets/gallery/realismo-1.jpg";
+import minimalista1 from "@/assets/gallery/minimalista-1.jpg";
+import animales1 from "@/assets/gallery/animales-1.jpg";
+import flores1 from "@/assets/gallery/flores-1.jpg";
+import lettering1 from "@/assets/gallery/lettering-1.jpg";
+import mandalas1 from "@/assets/gallery/mandalas-1.jpg";
+
+const styles = [
+  { name: "Blackwork", img: blackwork1 },
+  { name: "Black and Grey", img: blackandgrey1 },
+  { name: "Realismo", img: realismo1 },
+  { name: "Minimalista", img: minimalista1 },
+  { name: "Animales", img: animales1 },
+  { name: "Flores", img: flores1 },
+  { name: "Lettering", img: lettering1 },
+  { name: "Mandalas", img: mandalas1 },
+] as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,19 +118,28 @@ function Home() {
           <h2 className="mt-3 text-3xl md:text-5xl">Lo que tatuamos</h2>
           <div className="mt-6 gold-divider w-24 mx-auto" />
         </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {["Blackwork", "Black and Grey", "Realismo", "Minimalista", "Animales", "Flores", "Lettering", "Mandalas"].map((s) => (
-            <div
-              key={s}
-              className="aspect-[3/4] rounded-xl glass flex items-end p-5 group hover:scale-[1.02] transition-transform cursor-pointer"
-              style={{
-                backgroundImage: "linear-gradient(180deg, transparent 40%, oklch(0.08 0 0 / 0.85))",
-              }}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {styles.map((s) => (
+            <Link
+              key={s.name}
+              to="/galeria"
+              search={{ cat: s.name }}
+              className="relative aspect-[3/4] rounded-xl overflow-hidden glass group hover:scale-[1.02] transition-transform"
             >
-              <span className="text-lg font-display tracking-widest text-primary group-hover:text-gradient-gold">
-                {s}
+              <img
+                src={s.img}
+                alt={`Estilo ${s.name}`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ backgroundImage: "linear-gradient(180deg, transparent 35%, oklch(0.08 0 0 / 0.9))" }}
+              />
+              <span className="absolute bottom-5 left-5 right-5 text-lg font-display tracking-widest text-primary group-hover:text-gradient-gold">
+                {s.name}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="mt-10 text-center">
