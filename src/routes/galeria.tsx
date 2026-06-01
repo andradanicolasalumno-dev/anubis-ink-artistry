@@ -17,6 +17,9 @@ import blackandgrey2 from "@/assets/gallery/blackandgrey-2.jpg";
 import blackandgrey3 from "@/assets/gallery/blackandgrey-3.jpg";
 
 export const Route = createFileRoute("/galeria")({
+  validateSearch: (search: Record<string, unknown>): { cat?: string } => ({
+    cat: typeof search.cat === "string" ? search.cat : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Galería · AnubisTattoo" },
