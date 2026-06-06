@@ -117,8 +117,8 @@ function Galeria() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { src: "/reels/reel-1.mp4", title: "Reel #1", subtitle: "Proceso en vivo" },
-            { src: null, title: "Reel #2", subtitle: "Próximamente" },
-            { src: null, title: "Reel #3", subtitle: "Próximamente" },
+            { src: "/reels/reel-2.mp4", title: "Reel #2", subtitle: "Proceso en vivo" },
+            { src: "/reels/reel-3.mp4", title: "Reel #3", subtitle: "Proceso en vivo" },
           ].map((r, i) => (
             <div
               key={i}
