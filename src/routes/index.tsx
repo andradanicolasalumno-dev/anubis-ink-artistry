@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { ArrowRight, Sparkles, Shield, Award } from "lucide-react";
-import anubisLogo from "@/assets/anubis-logo.jpg";
-import anubisAvatar from "@/assets/anubis-avatar.jpg";
-import anubisGracias from "@/assets/anubis-gracias.jpg";
+import anubisLogo from "@/assets/anubis-logo.png";
+import anubisAvatar from "@/assets/anubis-avatar.png";
+import anubisGracias from "@/assets/anubis-gracias.png";
 import blackwork1 from "@/assets/gallery/blackwork-1.jpg";
 import blackandgrey1 from "@/assets/gallery/blackandgrey-1.jpg";
 import realismo1 from "@/assets/gallery/realismo-1.jpg";
