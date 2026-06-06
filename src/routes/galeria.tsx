@@ -132,6 +132,7 @@ function Galeria() {
                   muted
                   loop
                   playsInline
+                  controls
                   preload="metadata"
                 />
               ) : (
