@@ -14,8 +14,7 @@ export const Route = createFileRoute("/pagos")({
 
 const methods = [
   { icon: Banknote, title: "Efectivo", desc: "Pago en el estudio." },
-  { icon: CreditCard, title: "Débito", desc: "Todas las tarjetas." },
-  { icon: Wallet, title: "Crédito", desc: "Hasta 3 cuotas." },
+  { icon: CreditCard, title: "Tarjetas", desc: "Débito y crédito con 15% de recargo." },
   { icon: Landmark, title: "Transferencia", desc: "CBU / Alias." },
   { icon: Smartphone, title: "Mercado Pago", desc: "QR o link de pago." },
 ];
