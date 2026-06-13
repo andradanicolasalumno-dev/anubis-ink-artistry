@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
-import { Banknote, CreditCard, Landmark, Wallet, Smartphone } from "lucide-react";
+import { Banknote, CreditCard, Landmark, Smartphone } from "lucide-react";
 
 export const Route = createFileRoute("/pagos")({
   head: () => ({
     meta: [
       { title: "Métodos de Pago · AnubisTattoo" },
-      { name: "description", content: "Aceptamos efectivo, débito, crédito, transferencia y Mercado Pago." },
+      { name: "description", content: "Aceptamos efectivo, débito, transferencia y Mercado Pago." },
     ],
   }),
   component: Pagos,
@@ -14,8 +14,7 @@ export const Route = createFileRoute("/pagos")({
 
 const methods = [
   { icon: Banknote, title: "Efectivo", desc: "Pago en el estudio." },
-  { icon: CreditCard, title: "Débito", desc: "Todas las tarjetas." },
-  { icon: Wallet, title: "Crédito", desc: "Hasta 3 cuotas." },
+  { icon: CreditCard, title: "Tarjetas", desc: "Débito y crédito con 15% de recargo." },
   { icon: Landmark, title: "Transferencia", desc: "CBU / Alias." },
   { icon: Smartphone, title: "Mercado Pago", desc: "QR o link de pago." },
 ];
