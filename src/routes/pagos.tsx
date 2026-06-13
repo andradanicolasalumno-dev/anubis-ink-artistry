@@ -6,7 +6,7 @@ export const Route = createFileRoute("/pagos")({
   head: () => ({
     meta: [
       { title: "Métodos de Pago · AnubisTattoo" },
-      { name: "description", content: "Aceptamos efectivo, débito, crédito, transferencia y Mercado Pago." },
+      { name: "description", content: "Aceptamos efectivo, débito, transferencia y Mercado Pago." },
     ],
   }),
   component: Pagos,
