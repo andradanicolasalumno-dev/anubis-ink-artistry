@@ -75,12 +75,12 @@ function Sobre() {
             {
               icon: Heart,
               title: "Experiencia y técnica",
-              text: "Más de 10 años de oficio en blackwork, realismo, minimalismo, arte egipcio y tradicional japonés.",
+              text: "Más de 10 años de oficio en varios estilos, nos adaptamos a tu idea.",
             },
             {
               icon: Coffee,
               title: "Ambiente premium",
-              text: "Estudio privado, climatizado, con música, café y todo lo necesario para que disfrutes la sesión.",
+              text: "Estudio privado, climatizado, con música, lo necesario para que disfrutes la sesión.",
             },
           ].map((b) => (
             <div key={b.title} className="glass rounded-2xl p-8">
