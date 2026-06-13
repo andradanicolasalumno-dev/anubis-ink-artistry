@@ -65,7 +65,7 @@ function Sobre() {
             {
               icon: ShieldCheck,
               title: "Higiene y seguridad",
-              text: "Material 100% descartable y esterilizado. Protocolos certificados, guantes, barreras y bioseguridad en cada paso.",
+              text: "Material 100% descartable y esterilizado. Se abre todo delante tuyo y luego se descarta cada elemento usado.",
             },
             {
               icon: Sparkles,
