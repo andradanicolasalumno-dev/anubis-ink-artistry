@@ -169,7 +169,7 @@ function Home() {
             {/* Trust badges */}
             <ul className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto lg:mx-0 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               {[
-                "+13 años de experiencia",
+                "+20 años de experiencia",
                 "Diseños personalizados",
                 "Material esterilizado",
                 "Atención profesional",
