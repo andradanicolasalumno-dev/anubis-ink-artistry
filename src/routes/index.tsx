@@ -93,7 +93,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Tatuajes personalizados en Río Cuarto. Más de 13 años transformando ideas en piezas únicas. Diseño, técnica e higiene profesional.",
+          "Tatuajes personalizados en Río Cuarto. Más de 20 años transformando ideas en piezas únicas y personalizadas para tu piel. Trae tu idea y te asesoramos.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -163,7 +163,7 @@ function Home() {
               Tatuajes personalizados en Río Cuarto
             </h1>
             <p className="mt-5 max-w-xl mx-auto lg:mx-0 text-base md:text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              Más de 13 años transformando ideas en piezas únicas. Diseño, técnica e higiene profesional.
+              Más de 20 años transformando ideas en piezas únicas y personalizadas para tu piel. Trae tu idea y te asesoramos.
             </p>
 
             {/* Trust badges */}
