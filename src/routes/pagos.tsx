@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
-import { Banknote, CreditCard, Landmark, Wallet, Smartphone } from "lucide-react";
+import { Banknote, CreditCard, Landmark, Smartphone } from "lucide-react";
 
 export const Route = createFileRoute("/pagos")({
   head: () => ({
